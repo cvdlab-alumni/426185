@@ -1,0 +1,35 @@
+<html>
+<title>
+Palazzo dei Ricevimenti e dei Congressi
+</title>
+<body>
+<h1>Palazzo dei Ricevimenti e dei Congressi</h1>
+
+<br><br>
+<img src="images/facciata.png"><br><br>
+Il Palazzo dei Ricevimenti e dei Congressi, più informalmente noto come Palazzo dei Congressi, è un edificio situato a Roma nel quartiere dell'EUR; progettato da Adalberto Libera e iniziato nel 1938, fu completato nel 1954.
+Originariamente uno dei progetti più importanti della prevista Esposizione Universale di Roma del 1942, mai realizzatasi a causa della guerra, era quasi ultimato quando le urgenze postbelliche misero in secondo piano le esigenze architettoniche e di rappresentanza della Capitale, e solo negli anni cinquanta vide il definitivo completamento dei lavori e la sua apertura al pubblico.
+In ragione della sua capacità e dei suoi ampi volumi liberi fu destinato anche a ospitare le gare di scherma ai Giochi olimpici di Roma del 1960.
+<br>
+<br>
+<img src="images/dietro.jpg">
+<br>
+<br>
+<img src="images/base.png">
+<br>
+<br>
+<img src="images/pianta.jpg">
+<br>
+<br>
+<b>Studente: Andrea Cremisini
+Matricola: 426185</b>
+
+Gli esercizi svolti sono:
+<ul>
+<li><a href = "python/exercise1.py">Esercizio 1</a></li>
+<li><a href = "python/exercise2.py">Esercizio 2</a></li>
+<li><a href = "python/exercise3.py">Esercizio 3</a></li>
+</ul>
+
+</body>
+</html>
