@@ -47,4 +47,4 @@ sr = rotate([1,3],PI/6,s)
 srt = T([1,2,3])([37,16,25])(sr)
 parziale4 = STRUCT([parziale3,srt])
 
-#VIEW(parziale4)
+VIEW(parziale4)
