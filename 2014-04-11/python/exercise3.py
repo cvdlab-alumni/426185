@@ -56,9 +56,16 @@ def parzcircle(r):
 def rotate(coord,values,obj):
 	return R(coord)(values)(obj)
 
+#Colori usati
 basalto = rgb([87,93,94])
 asfalto = rgb([111,110,99])
 rosewood_red = rgb([101,0,11])
+cambrige_blue = rgb([163,193,173])
+forest_green = rgb([1,68,33])
+raw_brown = rgb([130,102,68])
+mantis_green = rgb([116,195,101])
+spring_green = rgb([23,114,69])
+pastel_yellow = rgb([253,253,150])
 
 semiTetto = COLOR(grigioMura)(CUBOID([75,135,4]))
 semiTetto2 = T([3])([12.1])(semiTetto)
@@ -150,22 +157,58 @@ finestrone2 = COLOR(celesteVetro)(INSR(PROD)([x1_2,y1,QUOTE([-4, 10,-1,10,-1,10,
 facciata_uff = STRUCT([facciata_vetro,finestrone2])
 palazzo1_1 = T([1,2])([-35,-100])(facciata_uff)
 
-palazzo2 = COLOR(grigioMura)(CUBOID([60,70,65]))
-palazzo2_1 = T([1,2])([185,-70])(palazzo2)
+palazzo2 = CUBOID([35,75.5,49])
+x1_22 = QUOTE([-34,3])
+y1_22 = QUOTE([-1,23.5,-1,23.5,-1,23.5,-1,])
+finestrone12 = INSR(PROD)([x1_22,y1_22,QUOTE([-4, 10,-1,10,-1,10,-1,10,-1])])
+facciata_vetro12 = COLOR(pastel_yellow)(DIFFERENCE([palazzo2,finestrone12]))
+x1_23 = QUOTE([-34, 1.5])
+finestrone23 = COLOR(celesteVetro)(INSR(PROD)([x1_23,y1_22,QUOTE([-4, 10,-1,10,-1,10,-1,10,-1])]))
+facciata_uff_23 = STRUCT([facciata_vetro12,finestrone23])
+palazzo2_3 = rotate([1,2],PI,facciata_uff_23) 
+palazzo2_2 = T([1,2])([220,150])(palazzo2_3)
+palazzo2_1 = T([1,2])([0,-150])(palazzo2_2)
 
-palazzo3 = COLOR(grigioMura)(CUBOID([30,60,40]))
-x2 = QUOTE([-29,1])
-y2 = QUOTE([-2,14,-2,14,-2,14,-2,14,-2])
-finestrone3 = INSR(PROD)([x1,y1,QUOTE([-1, 12,-1,12,-1,12,-1])])
-facciata_vetro2 = COLOR(rosewood_red)(DIFFERENCE([palazzo3,finestrone3]))
-x2_2 = QUOTE([-29, 0.5])
-finestrone4 = COLOR(celesteVetro)(INSR(PROD)([x1_2,y1,QUOTE([-4, 10,-1,10,-1,10,-1,10,-1,10,-1])]))
-facciata_uff2 = STRUCT([facciata_vetro2,finestrone3])
-palazzo3_1 = T([1,2])([-35,-100])(facciata_uff2)
-
-palazzo3_2 = T([1,2])([185,70])(palazzo3_1)
+palazzo3 = COLOR(grigioMura)(CUBOID([35,100,38]))
+x3 = QUOTE([-34,1])
+y3 = QUOTE([-1,23.5,-1,23.5,-1,23.5,-1,23.5,-1])
+finestrone3 = INSR(PROD)([x1,y1,QUOTE([-4, 10,-1,10,-1,10,-1])])
+facciata_vetro3 = COLOR(cambrige_blue)(DIFFERENCE([palazzo3,finestrone3]))
+x3_2 = QUOTE([-34, 0.5])
+finestrone3_1 = COLOR(celesteVetro)(INSR(PROD)([x1_2,y1,QUOTE([-4, 10,-1,10,-1,10,-1])]))
+facciata_uff_3 = STRUCT([facciata_vetro3,finestrone3_1])
+palazzo3_1 = rotate([1,2],PI,facciata_uff_3) 
+palazzo3_2 = T([1,2])([220,150])(palazzo3_1)
 
 parziale14 = STRUCT([parziale13,palazzo1_1,palazzo2_1, palazzo3_2])
 
+parco = COLOR(mantis_green)(CUBOID([83,150,1.2]))
 
-VIEW(parziale14)
+
+
+#Albero
+tronco = COLOR(raw_brown)(CYLINDER([0.4,7.0])(12))
+chioma = T([3])([7])(COLOR(forest_green)(SPHERE(3)([20,5])))
+albero = STRUCT([tronco, chioma])
+vector_albero = [T(2)(7),albero]
+schiera_alberi = STRUCT(NN(21)(vector_albero))
+vector_alberi2 = [T(1)(7),schiera_alberi]
+schiera_alberi2 = STRUCT(NN(11)(vector_alberi2))
+parco_a = STRUCT([parco,schiera_alberi2])
+
+parziale15 = STRUCT([parziale14, T([1,2])([-83,50])(parco_a)])
+
+vector_cespugli = [T(2)(6),COLOR(spring_green)(SPHERE(2.5)([20,7]))]
+schieracespugli = STRUCT(NN(25)(vector_cespugli))
+
+schiera_alberi3 = STRUCT(NN(18)(vector_albero))
+
+schiera_alberi4 = STRUCT(NN(7)(vector_albero))
+
+vector_pilastrini = [T(1)(5),COLOR(grigioMura)(CYLINDER([1,2])(20))]
+pilastrini = STRUCT(NN(20)(vector_pilastrini))
+
+parziale16 = STRUCT([parziale15, T([1,2,3])([50,0,1.6])(schiera_alberi3), T([1,2,3])([135,0,1.6])(schiera_alberi3),T([1,2,3])([40,0,1.6])(schieracespugli),T([1,2,3])([40,-60,1.6])(schiera_alberi4),T([1,2,3])([145,-60,1.6])(schiera_alberi4),T([1,2,3])([145,-0,1.6])(schieracespugli), T([1,2])([40,-60])(pilastrini)])
+
+
+VIEW(parziale16)
