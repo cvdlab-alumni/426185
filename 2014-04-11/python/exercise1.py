@@ -49,7 +49,7 @@ pilastri = INSR(PROD)([x_pilastri,y_pilastri,QUOTE([12.1])])
 parziale1 = STRUCT([parziale, COLOR(grigioMura)(pilastri)])
 
 
-x_p = QUOTE([-0.35, 3.55,-0.35]*17)
+x_p = QUOTE([-0.25, 3.55,-0.25]*18)
 y_p = QUOTE([-11,1.2, -98, 1.2])
 vetrata = INSR(PROD)([x_p,y_p,QUOTE([5.875, -0.25, 5.875])])
 parziale10 = STRUCT([parziale1, COLOR(celesteVetro)(vetrata)])
@@ -107,4 +107,4 @@ parziale52 = STRUCT([parziale54, banchi52])
 
 
 
-VIEW(parziale52)
+#VIEW(parziale52)
