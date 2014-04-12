@@ -87,6 +87,38 @@ semi = extrude(semicerchio,44.65)
 s = MAP([S1,S3,S2])(semi)
 sr = rotate([1,3],PI/6,s)
 srt = COLOR(grigioMura)(T([1,2,3])([37,16.3,25])(sr))
-parziale4 = STRUCT([parziale2,srt])
 
-VIEW(parziale4)
+semicerchio2 = parzcircle(22.98)
+semi2 = extrude(semicerchio2,3)
+s2 = MAP([S1,S3,S2])(semi2)
+sr2 = rotate([1,3],PI/6,s2)
+srt2 = T([1,2,3])([37,16.3,25])(sr2)
+
+srt2_1 = T([1,2,3])([37.16,57.95,25])(sr2)
+
+
+parziale5 = DIFFERENCE([srt,srt2,srt2_1])
+
+parziale5 = COLOR(grigioMura)(parziale5)
+
+srt3 = COLOR(celesteVetro)(T([1,2,3])([37,17.5,25])(sr2))
+
+srt3_1 = COLOR(celesteVetro)(T([1,2,3])([37.16,55.05,25])(sr2))
+
+parziale6 = STRUCT([parziale5,srt3, srt3_1])
+
+parziale7 = rotate([1,2],PI/2,parziale6)
+
+parziale8 = T([1])([76])(parziale7)
+
+parziale4 = STRUCT([parziale2,parziale6,parziale8])
+
+muroEst = rotate([1,2],PI/2,mura1)
+
+parziale9 = STRUCT([parziale4,T([1])([75])(muroEst)])
+
+muroOvest = rotate([1,2],3*PI/2,mura1)
+
+parziale10 = STRUCT([parziale9,T([2])([135])(muroOvest)])
+
+VIEW(parziale10)
