@@ -182,4 +182,44 @@ palazzo3_2 = T([1,2])([220,150])(palazzo3_1)
 
 parziale14 = STRUCT([parziale13,palazzo1_1,palazzo2_1, palazzo3_2])
 
-VIEW(parziale14)
+parco = COLOR(mantis_green)(CUBOID([83,150,1.2]))
+
+
+
+#Albero
+tronco = COLOR(raw_brown)(CYLINDER([0.4,7.0])(12))
+chioma = T([3])([7])(COLOR(forest_green)(SPHERE(3)([20,5])))
+albero = STRUCT([tronco, chioma])
+vector_albero = [T(2)(7),albero]
+schiera_alberi = STRUCT(NN(21)(vector_albero))
+vector_alberi2 = [T(1)(7),schiera_alberi]
+schiera_alberi2 = STRUCT(NN(11)(vector_alberi2))
+parco_a = STRUCT([parco,schiera_alberi2])
+
+parziale15 = STRUCT([parziale14, T([1,2])([-83,50])(parco_a)])
+
+vector_cespugli = [T(2)(6),COLOR(spring_green)(SPHERE(2.5)([20,7]))]
+schieracespugli = STRUCT(NN(25)(vector_cespugli))
+
+schiera_alberi3 = STRUCT(NN(18)(vector_albero))
+
+schiera_alberi4 = STRUCT(NN(7)(vector_albero))
+
+vector_pilastrini = [T(1)(5),COLOR(grigioMura)(CYLINDER([1,2])(20))]
+pilastrini = STRUCT(NN(20)(vector_pilastrini))
+
+parziale16 = STRUCT([parziale15, T([1,2,3])([50,0,1.6])(schiera_alberi3), T([1,2,3])([135,0,1.6])(schiera_alberi3),T([1,2,3])([40,0,1.6])(schieracespugli),T([1,2,3])([40,-60,1.6])(schiera_alberi4),T([1,2,3])([145,-60,1.6])(schiera_alberi4),T([1,2,3])([145,-0,1.6])(schieracespugli), T([1,2])([40,-60])(pilastrini)])
+
+strisce_strada = COLOR(WHITE)(CUBOID([172,1]))
+strisce_strada_v = COLOR(WHITE)(CUBOID([1,287]))
+
+strisce_strada2= COLOR(WHITE)(CUBOID([132,1]))
+strisce_strada_v2 = COLOR(WHITE)(CUBOID([1,247]))
+
+vector_pedonale = [T(2)(3),COLOR(WHITE)(CUBOID([10,2]))]
+pedonali = STRUCT(NN(5)(vector_pedonale))
+
+
+parziale17 = STRUCT([T([1,2])([40,-95])(pedonali),T([1,2])([132,-95])(pedonali),T([1,2])([5,-95])(strisce_strada),T([1,2])([5,192])(strisce_strada),T([1,2])([5,-95])(strisce_strada_v),T([1,2])([177,-95])(strisce_strada_v),T([1,2])([25,-75])(strisce_strada2),T([1,2])([25,172])(strisce_strada2),T([1,2])([25,-75])(strisce_strada_v2),T([1,2])([157,-75])(strisce_strada_v2),parziale16])
+
+VIEW(parziale17)

@@ -36,4 +36,4 @@ y2_2 = QUOTE([-0.6, 1])
 finestre3 = COLOR(celesteVetro)(INSR(PROD)([x2,y2_2,QUOTE([-3,3,-3,3,-3])]))
 mura1 = STRUCT([mura,finestre3])
 
-#VIEW(mura1)
+VIEW(mura1)

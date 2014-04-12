@@ -106,5 +106,4 @@ banchi52 = INSR(PROD)([x_p1,y_p1,QUOTE([-4,2.1, -4, 2])])
 parziale52 = STRUCT([parziale54, COLOR(grigioMura)(banchi52)])
 
 
-
-#VIEW(parziale52)
+VIEW(parziale52)
