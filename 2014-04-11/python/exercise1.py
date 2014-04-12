@@ -40,7 +40,7 @@ lato_piccolo1 = T(2)(30)(lato_piccolo)
 lato_piccolo2 = T(2)(105)(lato_piccolo_f)
 lato_piccolo3 = T(1)(52.8)(lato_piccolo2)
 lato_piccolo4 = T(1)(55)(lato_piccolo1)
-parziale = STRUCT([COLOR(grigioMura)(lato),COLOR(grigioMura)(lato2),COLOR(grigioMura)(lato3),COLOR(grigioMura)(lato1),lato_piccolo1,lato_piccolo2,lato_piccolo3,lato_piccolo4,floor_0])
+parziale = COLOR(grigioMura)(STRUCT([COLOR(grigioMura)(lato),COLOR(grigioMura)(lato2),COLOR(grigioMura)(lato3),COLOR(grigioMura)(lato1),lato_piccolo1,lato_piccolo2,lato_piccolo3,lato_piccolo4,floor_0]))
 
 
 x_pilastri = QUOTE([-3.55,1.55]*14)
@@ -63,7 +63,7 @@ parziale2 = STRUCT([parziale10, COLOR(grigioMura)(banchi)])
 x_p1 = QUOTE([75])
 y_p1 = QUOTE([-30,4.5])
 banchi1 = INSR(PROD)([x_p1,y_p1,QUOTE([-5,7.1])])
-parziale12 = STRUCT([parziale2, banchi1])
+parziale12 = STRUCT([parziale2, COLOR(grigioMura)(banchi1)])
 
 x_p2 = QUOTE([26.51,-3.18,3.18,-3.18,3.18,-3.18,3.18,-3.18,26.18])
 y_p2 = QUOTE([-65,1.2])
@@ -73,37 +73,37 @@ parziale3 = STRUCT([parziale12, COLOR(grigioMura)(banchi2)])
 x_p1 = QUOTE([75])
 y_p1 = QUOTE([-65,1.2])
 banchi32 = INSR(PROD)([x_p1,y_p1,QUOTE([-5,7.1])])
-parziale32 = STRUCT([parziale3, banchi32])
+parziale32 = STRUCT([parziale3, COLOR(grigioMura)(banchi32)])
 
 x_p3 = QUOTE([-20, -1.18, 1.2])
 y_p3 = QUOTE([-30,-3.18,3.18,-3.18,3.18,-3.18,3.18,-3.18,3.18,-3.18,3.18,-3.18,44.5])
 banchi3 = INSR(PROD)([x_p3,y_p3,QUOTE([4, -2.1, 4, -2])])
-parziale4 = STRUCT([parziale32, banchi3])
+parziale4 = STRUCT([parziale32, COLOR(grigioMura)(banchi3)])
 
 x_p3 = QUOTE([-20, -1.18, 1.2])
 y_p3 = QUOTE([-65, 44.5])
 banchi33 = INSR(PROD)([x_p3,y_p3,QUOTE([12.1])])
-parziale44 = STRUCT([parziale4, banchi33])
+parziale44 = STRUCT([parziale4, COLOR(grigioMura)(banchi33)])
 
 x_p1 = QUOTE([-20, -1.18, 33])
 y_p1 = QUOTE([-30, 34.98])
 banchi42 = INSR(PROD)([x_p1,y_p1,QUOTE([-4,2.1, -4, 2])])
-parziale42 = STRUCT([parziale44, banchi42])
+parziale42 = STRUCT([parziale44, COLOR(grigioMura)(banchi42)])
 
 x_p4 = QUOTE([-51.82, -1.18,  1.2])
 y_p4 = QUOTE([-30,-3.18,3.18,-3.18,3.18,-3.18,3.18,-3.18,3.18,-3.18,3.18,-3.18,44.5])
 banchi4 = INSR(PROD)([x_p4,y_p4,QUOTE([4, -2.1, 4, -2])])
-parziale5 = STRUCT([parziale42, banchi4])
+parziale5 = STRUCT([parziale42, COLOR(grigioMura)(banchi4)])
 
 x_p3 = QUOTE([-51.82, -1.18,  1.2])
 y_p3 = QUOTE([-65, 44.5])
 banchi53 = INSR(PROD)([x_p3,y_p3,QUOTE([12.1])])
-parziale54 = STRUCT([parziale5, banchi53])
+parziale54 = STRUCT([parziale5, COLOR(grigioMura)(banchi53)])
 
 x_p1 = QUOTE([-51.82, -1.18,  1.2])
 y_p1 = QUOTE([-30, 34.98])
 banchi52 = INSR(PROD)([x_p1,y_p1,QUOTE([-4,2.1, -4, 2])])
-parziale52 = STRUCT([parziale54, banchi52])
+parziale52 = STRUCT([parziale54, COLOR(grigioMura)(banchi52)])
 
 
 

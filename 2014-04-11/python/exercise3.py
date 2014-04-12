@@ -56,15 +56,8 @@ def parzcircle(r):
 def rotate(coord,values,obj):
 	return R(coord)(values)(obj)
 
-#ESERCIZIO 3
-#x_pilastri = QUOTE([-3.35,1.55]*14)
-#y_pilastri = QUOTE([-0.4,1.55])
-#pilastri = INSR(PROD)([x_pilastri,y_pilastri,QUOTE([12.1])])
-#mura = CUBOID([75.72,135,15])
-#muroVUOTO = CUBOID([72.18,5.16,12.1])
-#muroFINITO = DIFFERENCE([mura, T(1)(1.77)(muroVUOTO)])
-#parziale = STRUCT([muroFINITO, T([1,2])([1.77,-0.5])(COLOR(BLUE)(pilastri))])
-
+basalto = rgb([87,93,94])
+asfalto = rgb([111,110,99])
 
 semiTetto = COLOR(grigioMura)(CUBOID([75,135,4]))
 semiTetto2 = T([3])([12.1])(semiTetto)
@@ -121,4 +114,37 @@ muroOvest = rotate([1,2],3*PI/2,mura1)
 
 parziale10 = STRUCT([parziale9,T([2])([135])(muroOvest)])
 
-VIEW(parziale10)
+#Scale
+scalino1 = CUBOID([75,137,2])
+scalino2 = CUBOID([75,138,2])
+scalino3 = CUBOID([75,139,2])
+scalino4 = CUBOID([75,140,2])
+scalino5 = CUBOID([75,141,2])
+
+scalinata = COLOR(grigioMura)(STRUCT([T([3])([4])(scalino1),T([3])([3])(scalino2),T([3])([2])(scalino3),T([3])([1])(scalino4),scalino5]))
+scalinata1 = rotate([1,2],PI,scalinata)
+scalinata2 = T([1,2])([75,135])(scalinata1)
+
+parziale11 = STRUCT([scalinata2,T([3])([4])(parziale10),scalinata])
+
+pavimento = COLOR(basalto)(CUBOID([115,230,1]))
+pavimento1 = T([2])([-65])(pavimento)
+
+parziale12 = STRUCT([pavimento1,T([1,3])([20,1])(parziale11)])
+
+strada = COLOR(asfalto)(CUBOID([185,300,0]))
+strada1 = T([2])([-100])(strada)
+
+parziale13 = STRUCT([strada1,T([1])([35])(parziale12)])
+
+
+#Esterno
+palazzo1 = COLOR(grigioMura)(CUBOID([35,100,60]))
+palazzo1_1 = T([1,2])([-35,-100])(palazzo1)
+
+palazzo2 = COLOR(grigioMura)(CUBOID([60,70,65]))
+palazzo2_1 = T([1,2])([185,-70])(palazzo2)
+
+parziale14 = STRUCT([parziale13,palazzo1_1,palazzo2_1])
+
+VIEW(parziale13)
