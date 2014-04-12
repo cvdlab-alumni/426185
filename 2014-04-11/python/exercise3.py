@@ -210,5 +210,16 @@ pilastrini = STRUCT(NN(20)(vector_pilastrini))
 
 parziale16 = STRUCT([parziale15, T([1,2,3])([50,0,1.6])(schiera_alberi3), T([1,2,3])([135,0,1.6])(schiera_alberi3),T([1,2,3])([40,0,1.6])(schieracespugli),T([1,2,3])([40,-60,1.6])(schiera_alberi4),T([1,2,3])([145,-60,1.6])(schiera_alberi4),T([1,2,3])([145,-0,1.6])(schieracespugli), T([1,2])([40,-60])(pilastrini)])
 
+strisce_strada = COLOR(WHITE)(CUBOID([172,1]))
+strisce_strada_v = COLOR(WHITE)(CUBOID([1,287]))
 
-VIEW(parziale16)
+strisce_strada2= COLOR(WHITE)(CUBOID([132,1]))
+strisce_strada_v2 = COLOR(WHITE)(CUBOID([1,247]))
+
+vector_pedonale = [T(2)(3),COLOR(WHITE)(CUBOID([10,2]))]
+pedonali = STRUCT(NN(5)(vector_pedonale))
+
+
+parziale17 = STRUCT([T([1,2])([40,-95])(pedonali),T([1,2])([132,-95])(pedonali),T([1,2])([5,-95])(strisce_strada),T([1,2])([5,192])(strisce_strada),T([1,2])([5,-95])(strisce_strada_v),T([1,2])([177,-95])(strisce_strada_v),T([1,2])([25,-75])(strisce_strada2),T([1,2])([25,172])(strisce_strada2),T([1,2])([25,-75])(strisce_strada_v2),T([1,2])([157,-75])(strisce_strada_v2),parziale16])
+
+VIEW(parziale17)
