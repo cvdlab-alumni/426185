@@ -58,6 +58,7 @@ def rotate(coord,values,obj):
 
 basalto = rgb([87,93,94])
 asfalto = rgb([111,110,99])
+rosewood_red = rgb([101,0,11])
 
 semiTetto = COLOR(grigioMura)(CUBOID([75,135,4]))
 semiTetto2 = T([3])([12.1])(semiTetto)
@@ -140,11 +141,31 @@ parziale13 = STRUCT([strada1,T([1])([35])(parziale12)])
 
 #Esterno
 palazzo1 = COLOR(grigioMura)(CUBOID([35,100,60]))
-palazzo1_1 = T([1,2])([-35,-100])(palazzo1)
+x1 = QUOTE([-34,1])
+y1 = QUOTE([-1,23.5,-1,23.5,-1,23.5,-1,23.5,-1])
+finestrone = INSR(PROD)([x1,y1,QUOTE([-4, 10,-1,10,-1,10,-1,10,-1,10,-1])])
+facciata_vetro = COLOR(rosewood_red)(DIFFERENCE([palazzo1,finestrone]))
+x1_2 = QUOTE([-34, 0.5])
+finestrone2 = COLOR(celesteVetro)(INSR(PROD)([x1_2,y1,QUOTE([-4, 10,-1,10,-1,10,-1,10,-1,10,-1])]))
+facciata_uff = STRUCT([facciata_vetro,finestrone2])
+palazzo1_1 = T([1,2])([-35,-100])(facciata_uff)
 
 palazzo2 = COLOR(grigioMura)(CUBOID([60,70,65]))
 palazzo2_1 = T([1,2])([185,-70])(palazzo2)
 
-parziale14 = STRUCT([parziale13,palazzo1_1,palazzo2_1])
+palazzo3 = COLOR(grigioMura)(CUBOID([30,60,40]))
+x2 = QUOTE([-29,1])
+y2 = QUOTE([-2,14,-2,14,-2,14,-2,14,-2])
+finestrone3 = INSR(PROD)([x1,y1,QUOTE([-1, 12,-1,12,-1,12,-1])])
+facciata_vetro2 = COLOR(rosewood_red)(DIFFERENCE([palazzo3,finestrone3]))
+x2_2 = QUOTE([-29, 0.5])
+finestrone4 = COLOR(celesteVetro)(INSR(PROD)([x1_2,y1,QUOTE([-4, 10,-1,10,-1,10,-1,10,-1,10,-1])]))
+facciata_uff2 = STRUCT([facciata_vetro2,finestrone3])
+palazzo3_1 = T([1,2])([-35,-100])(facciata_uff2)
 
-VIEW(parziale13)
+palazzo3_2 = T([1,2])([185,70])(palazzo3_1)
+
+parziale14 = STRUCT([parziale13,palazzo1_1,palazzo2_1, palazzo3_2])
+
+
+VIEW(parziale14)
