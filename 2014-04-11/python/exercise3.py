@@ -34,6 +34,42 @@ import boolean2
 from boolean2 import *
 
 import mapper
+from mapper import *from pyplasm import *
+
+import sys
+sys.path.insert(0, '/home/orange/Dropbox/GP/426185/2014-04-11/python/')
+import exercise1
+from exercise1 import*
+import exercise2
+from exercise2 import*
+
+import sys
+""" import modules from lar-cc/lib """
+sys.path.insert(0, '/home/orange/lar-cc/lib/py/')
+
+""" Mapping functions and primitive objects """
+from pyplasm import *
+from scipy import *
+import os
+
+""" import modules from larcc/lib """
+'''sys.path.insert(0, 'lib/py/')'''
+import lar2psm
+from lar2psm import *
+
+import simplexn
+from simplexn import *
+
+import larcc
+from larcc import *
+
+import largrid
+from largrid import *
+
+import boolean2
+from boolean2 import *
+
+import mapper
 from mapper import *
 
 def circle(r):
@@ -182,4 +218,4 @@ palazzo3_2 = T([1,2])([220,150])(palazzo3_1)
 
 parziale14 = STRUCT([parziale13,palazzo1_1,palazzo2_1, palazzo3_2])
 
-VIEW(parziale14)
+#VIEW(parziale14)
