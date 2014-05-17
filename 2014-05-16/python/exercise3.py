@@ -62,22 +62,3 @@ def loopMergingNumberingRemove (diagram,master,toMergeArray,toRemoveArray):
 			toRemoveArray[i][j] += lastNumber
 		toRemoveCell(toRemoveArray[i],master)
 	return master
-
-
-master = assemblyDiagramInit([5,5,2])([[.3,3.2,.1,5,.3],[.3,4,.1,2.9,.3],[.3,2.7]])
-
-hpc = SKEL_1(STRUCT(MKPOLS(master)))
-hpc = numberingCell(master)
-VIEW(hpc)
-
-toRemove = [[5],[6]]
-toMerge = [11,12]
-diagram1 = assemblyDiagramInit([3,1,2])([[2,1,2],[.3],[2.2,.5]])
-diagram2 = assemblyDiagramInit([5,1,3])([[1.5,0.9,.2,.9,1.5],[.3],[1,1.4,.3]])
-diagrams = [diagram1,diagram2]
-
-master = loopMergingNumberingRemove(diagrams,master,toMerge,toRemove)
-
-hpc = SKEL_1(STRUCT(MKPOLS(master)))
-hpc = numberingCell(master)
-VIEW(hpc)
