@@ -4,7 +4,7 @@ from scipy import *
 import os
 import sys
 """ import modules from lar-cc/lib """
-sys.path.insert(0, '/home/orange/lar-cc/lib/py/')
+sys.path.insert(0, '/home/silvia/lar-cc/lib/py/')
 """ import modules from larcc/lib """
 '''sys.path.insert(0, 'lib/py/')'''
 import lar2psm
