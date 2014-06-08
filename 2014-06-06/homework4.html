@@ -75,12 +75,11 @@ Homework 4
 
       
           //CREZIONE OGGETTI NELL'AMBIENTE
-         
-          //Crezione dell'oggetto Lamp
+          //Creazione del piano
+
           lamp = new THREE.Object3D();
 
-          //Creazione del piano
-          var planeGeometry = new THREE.PlaneGeometry(250, 80, 20,20); //Crea la geometria, la dimensione del piano
+          var planeGeometry = new THREE.PlaneGeometry(250, 120, 20,20); //Crea la geometria, la dimensione del piano
           var planeMaterial = new THREE.MeshLambertMaterial({color: 0x779BCB, side: THREE.DoubleSide});
           var plane = new THREE.Mesh(planeGeometry,planeMaterial); //Crea l'oggetto
           plane.receiveShadow = true;
@@ -104,65 +103,7 @@ Homework 4
 
           //Prima parte della lampada: le tre sbarre con la sfera
           function mkJointFirst (radius, height) {
-
-            var joint = new THREE.Object3D(); //Crezione oggetto che permette di unire i vari pezzi creati in seguito
-            
-            //Creazione della prima sfera
-            var sphereGeometry = new THREE.SphereGeometry(radius, 20, 20);
-            var sphereMaterial = new THREE.MeshPhongMaterial({color: 0xf2f3f7, shading: THREE.FlatShading});
-            var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
-            sphere.position.set(0, 0, 0);
-            sphere.castShadow = true;
-            joint.add(sphere);
-
-            //Creazione dell'oggetto cilindro che contiene i 3 cilindri
-            var cylinder = new THREE.Object3D();
-
-            //Primo cilindro (quello di sinistra della coppia)
-            var cylinderGeometry = new THREE.CylinderGeometry(0.2,0.4,height,32,32);
-            var cylinderMaterial = new THREE.MeshPhongMaterial({color: 0xdcdcdc, shading: THREE.FlatShading, shininess: 100, metal: true});
-            var cylinder1 = new THREE.Mesh(cylinderGeometry,cylinderMaterial);
-            cylinder1.position.set(-0.4, 0, -0.4);
-            cylinder1.castShadow = true;
-            cylinder.add(cylinder1);
-
-            //Secondo cilindro (quello di destra della coppia)
-            var cylinderGeometry = new THREE.CylinderGeometry(0.2,0.4,height,32,32);
-            var cylinderMaterial = new THREE.MeshPhongMaterial({color: 0xdcdcdc, shading: THREE.FlatShading, shininess: 100, metal: true});
-            var cylinder2 = new THREE.Mesh(cylinderGeometry,cylinderMaterial);
-            cylinder2.position.set(0.4, 0, -0.4);
-            cylinder2.castShadow = true;
-            cylinder.add(cylinder2);
-
-            //Terzo cilindro (quello di centro da solo)
-            var cylinderGeometry = new THREE.CylinderGeometry(0.2,0.4,height,32,32);
-            var cylinderMaterial = new THREE.MeshPhongMaterial({color: 0xdcdcdc, shading: THREE.FlatShading, shininess: 100, metal: true});
-            var cylinder3 = new THREE.Mesh(cylinderGeometry,cylinderMaterial);
-            cylinder3.position.set(0, 0, 0.4);
-            cylinder3.castShadow = true;
-            cylinder.add(cylinder3);
-
-            cylinder.position.set(0,height/2 + radius -.2,0) //Posizione dell'oggetto cilindro
-            sphere.add(cylinder); //Aggiunto l'oggetto cilindro alla sfera
-
-            //Creazione dell'oggetto hook che viene usato come gancio per gli altri elementi
-            var hook = new THREE.Object3D();
-            hook.position.set(0, height/2+radius, 0);
-            cylinder.add(hook);
-
-            joint.sphere = sphere;
-            joint.cylinder = cylinder;
-            joint.hook = hook;
-
-            return joint;
-          }
-
-          //Seconda parte della lampada: due sbarre e la sfera
-          function mkJointSecond (radius, height) {
-            
             var joint = new THREE.Object3D();
-            
-            //Crezione prima sfera
             var sphereGeometry = new THREE.SphereGeometry(radius, 20, 20);
             var sphereMaterial = new THREE.MeshPhongMaterial({color: 0xf2f3f7, shading: THREE.FlatShading});
             var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
@@ -170,26 +111,29 @@ Homework 4
             sphere.castShadow = true;
             joint.add(sphere);
 
-            //Creazione dell'oggetto cilindro che contiene 2 cilindri
             var cylinder = new THREE.Object3D();
 
-            //Primo cilindro 
-            var cylinderGeometry = new THREE.CylinderGeometry(0.4,0.2,height,32,32);
-            var cylinderMaterial = new THREE.MeshPhongMaterial({color: 0xdcdcdc, shading: THREE.FlatShading, shininess: 100, metal: true});
-            var cylinderC1 = new THREE.Mesh(cylinderGeometry,cylinderMaterial);
-            cylinderC1.position.set(0, 0, -0.4);
-            cylinderC1.castShadow = true;
-            cylinder.add(cylinderC1);
+            var cylinderGeometry = new THREE.CylinderGeometry(0.2,0.4,height,32,32);
+            var cylinderMaterial = new THREE.MeshPhongMaterial({color: 0x8696a6, shading: THREE.FlatShading, shininess: 100, metal: true});
+            var cylinderL = new THREE.Mesh(cylinderGeometry,cylinderMaterial);
+            cylinderL.position.set(-0.4, 0, -0.4);
+            cylinderL.castShadow = true;
+            cylinder.add(cylinderL);
 
-            //Secondo cilindro
-            var cylinderGeometry = new THREE.CylinderGeometry(0.4,0.2,height,32,32);
-            var cylinderMaterial = new THREE.MeshPhongMaterial({color: 0xdcdcdc, shading: THREE.FlatShading, shininess: 100, metal: true});
-            var cylinderC2 = new THREE.Mesh(cylinderGeometry,cylinderMaterial);
-            cylinderC2.position.set(0, 0, 0.4);
-            cylinderC2.castShadow = true;
-            cylinder.add(cylinderC2);
+            var cylinderGeometry = new THREE.CylinderGeometry(0.2,0.4,height,32,32);
+            var cylinderMaterial = new THREE.MeshPhongMaterial({color: 0x8696a6, shading: THREE.FlatShading, shininess: 100, metal: true});
+            var cylinderR = new THREE.Mesh(cylinderGeometry,cylinderMaterial);
+            cylinderR.position.set(0.4, 0, -0.4);
+            cylinderR.castShadow = true;
+            cylinder.add(cylinderR);
 
-            cylinder.position.set(0,height/2 + radius -.2,0); //Posizione dell'oggetto cilindro
+            var cylinderGeometry = new THREE.CylinderGeometry(0.2,0.4,height,32,32);
+            var cylinderMaterial = new THREE.MeshPhongMaterial({color: 0x8696a6, shading: THREE.FlatShading, shininess: 100, metal: true});
+            var cylinderC = new THREE.Mesh(cylinderGeometry,cylinderMaterial);
+            cylinderC.position.set(0, 0, 0.4);
+            cylinderC.castShadow = true;
+            cylinder.add(cylinderC);
+            cylinder.position.set(0,height/2 + radius -.2,0)
             sphere.add(cylinder);
 
             var hook = new THREE.Object3D();
@@ -203,19 +147,54 @@ Homework 4
             return joint;
           }
 
-          //Terza parte della lampada: sfera e testa
-          function mkJointLamp (radius) {
-
+          //Seconda parte della lampada: due sbarre e la sfera
+          function mkJointSecond (radius, height) {
             var joint = new THREE.Object3D();
+            var sphereGeometry = new THREE.SphereGeometry(radius, 20, 20);
+            var sphereMaterial = new THREE.MeshPhongMaterial({color: 0xf2f3f7, shading: THREE.FlatShading});
+            var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+            sphere.position.set(0, 0, 0);
+            sphere.castShadow = true;
+            joint.add(sphere);
 
-            //Creazione sfera
+            var cylinder = new THREE.Object3D();
+
+            var cylinderGeometry = new THREE.CylinderGeometry(0.4,0.2,height,32,32);
+            var cylinderMaterial = new THREE.MeshPhongMaterial({color: 0x8696a6, shading: THREE.FlatShading, shininess: 100, metal: true});
+            var cylinderC1 = new THREE.Mesh(cylinderGeometry,cylinderMaterial);
+            cylinderC1.position.set(0, 0, -0.4);
+            cylinderC1.castShadow = true;
+            cylinder.add(cylinderC1);
+
+            var cylinderGeometry = new THREE.CylinderGeometry(0.4,0.2,height,32,32);
+            var cylinderMaterial = new THREE.MeshPhongMaterial({color: 0x8696a6, shading: THREE.FlatShading, shininess: 100, metal: true});
+            var cylinderC2 = new THREE.Mesh(cylinderGeometry,cylinderMaterial);
+            cylinderC2.position.set(0, 0, 0.4);
+            cylinderC2.castShadow = true;
+            cylinder.add(cylinderC2);
+            cylinder.position.set(0,height/2 + radius -.2,0)
+            sphere.add(cylinder);
+
+            var hook = new THREE.Object3D();
+            hook.position.set(0, height/2+radius, 0);
+            cylinder.add(hook);
+
+            joint.sphere = sphere;
+            joint.cylinder = cylinder;
+            joint.hook = hook;
+
+            return joint;
+          }
+
+          //Funzione che permette di unire una sfera con la parte con la testa della lampada
+          function mkJointLamp (radius) {
+            var joint = new THREE.Object3D();
             var sphereGeometry = new THREE.SphereGeometry(radius, 20, 20);
             var sphereMaterial = new THREE.MeshPhongMaterial({color: 0xf2f3f7, shading: THREE.FlatShading});
             var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
             sphere.castShadow = true;
             joint.add(sphere);
 
-            //Creazione testa della lampada
             var headLampGeometry = new THREE.SphereGeometry(5, 32, 32, Math.PI, Math.PI, 3*Math.PI/2)
             var headLampMaterial = new THREE.MeshPhongMaterial({color: 0xf2f3f7, shading: THREE.FlatShading, shininess: 100, metal: true});
             var headLamp = new THREE.Mesh(headLampGeometry, headLampMaterial);
@@ -225,19 +204,17 @@ Homework 4
             headLamp.rotation.x = Math.PI;
             sphere.add(headLamp);
 
-            //Creazione della lampadina
-            var sphereLightGeometry = new THREE.SphereGeometry(2,32,32);
-            var sphereLightMaterial = new THREE.MeshPhongMaterial({color: 0xFFFF00, shading: THREE.FlatShading, shininess: 100, metal: true});
-            var sphereLight = new THREE.Mesh(sphereLightGeometry,sphereLightMaterial);
-            sphereLight.position.set(0, radius+1.5, 0);
-            sphereLight.castShadow = true;
-            headLamp.add(sphereLight);
+            var sphereBulbGeometry = new THREE.SphereGeometry(2,32,32);
+            var sphereBulbMaterial = new THREE.MeshPhongMaterial({color: 0xFFFF00, shading: THREE.FlatShading, shininess: 100, metal: true});
+            var sphereBulb = new THREE.Mesh(sphereBulbGeometry,sphereBulbMaterial);
+            sphereBulb.position.set(0, radius+1.5, 0);
+            sphereBulb.castShadow = true;
+            headLamp.add(sphereBulb);
             
             var hook = new THREE.Object3D();
             hook.position.set(0, -20, 0);
-            sphereLight.add(hook);
+            sphereBulb.add(hook);
 
-            //Luce per la lampada
             light = new THREE.SpotLight( 0xffffff,20,40,Math.PI/2 );
             light.castShadow = true;
             light.target = hook;
@@ -248,21 +225,21 @@ Homework 4
             light.shadowMapWidth = 1024;
             light.shadowMapHeight = 1024;
             light.shadow;
-            sphereLight.add(light); //Aggiunta la luce alla lampada
+
+            sphereBulb.add(light);
 
             joint.sphere = sphere;
             joint.headLamp = headLamp;
-            joint.sphereLight = sphereLight;
+            joint.sphereBulb = sphereBulb;
             joint.light = light;
             joint.hook = hook;
 
             return joint;
           }
 
-          var height = 6.5; //Altezza cilindri
-          var radius = 0.9 ;  //Raggio sfere
+          var height = 6.5;
+          var radius = 0.9 ;
 
-          //Creazione e unione dei vari oggetti
           var joint1 = mkJointFirst(radius, height);
           var joint2 = mkJointSecond(radius, height);
           joint1.hook.add(joint2);
@@ -270,7 +247,6 @@ Homework 4
           var joint3 = mkJointLamp(radius,height);
           joint2.hook.add(joint3);
 
-          //Aggiunta della lampada completa e altri parametri
           lamp.add(joint1);
           lamp.castShadow = true;
           lamp.rotation.x = (Math.PI/2);
@@ -280,9 +256,8 @@ Homework 4
           spotLightHelper = new THREE.SpotLightHelper(joint3.light);
           scene.add(spotLightHelper);
 
-          //SCRITTA CVD-LAB
-          
-          //Funziona che permette di creare la scritta
+          //SCRITTA
+
           function createMesh(geom) {
             var meshMaterial = new THREE.MeshPhongMaterial({specular: 0xffffff, color: 0xFF6600, shininess: 100, metal: true});
             meshMaterial.castShadow = true;
@@ -290,11 +265,12 @@ Homework 4
             return plane;
           }
 
-          var text = new THREE.Object3D(); //Oggetto per il testo
+          var text = new THREE.Object3D()
 
-          //Prima parte della scritta: CVD - ab (la L verrà aggiunta in text2)
+          //Prima parte della scritta
           var text1;
           console.log(THREE.FontUtils.faces);
+
           var material = new THREE.MeshPhongMaterial({specular: 0xffffff, color: 0xFF6600, shininess: 100, metal: true});
           var textGeom = new THREE.TextGeometry('CVD -  ab', {font:"helvetiker"});
           var text1 = new THREE.Mesh( textGeom, material );
@@ -307,6 +283,7 @@ Homework 4
           text1.scale.x = scaleFactor;
           text1.scale.y = scaleFactor;
           text1.scale.z = scaleFactor;
+          //text1.castShadow = true;
           text.add(text1);
 
           //Seconda parte della scritta (la L)
@@ -320,7 +297,10 @@ Homework 4
           text2.rotation.x = Math.PI/2;
           text2.rotation.y = Math.PI;
           text2.height = 1;
-          var scaleFactor = 0.2;
+          var scaleFactor = .2
+
+          //text2.castShadow = true;
+
           text.add(text2);
           text.castShadow = true;
           text.receiveShadow = true;
@@ -328,21 +308,42 @@ Homework 4
           scene.add(text);
 
           //Posizionare lampada sopra la L
-          lamp.position.set(-26,5,20);
+          lamp.position.set(80,25,0);
           scene.add(lamp);
+
+
+         //Creazione dell'oggetto da puntare
+          var cylGeo = new THREE.CylinderGeometry(5, 2, 8, 32) //Crea la geometria, la dimensione della base
+          var cylMat= new THREE.MeshPhongMaterial({color: 0xb98e36}); //Aggiunge il colore, materiale
+          var cyl = new THREE.Mesh(cylGeo, cylMat); //Crea l'oggetto
+          cyl.position.set(80,45,3); //Posizione della base
+          scene.add(cyl); //Aggiungo della base alla scena
 
           //Aggiungiamo l'output del renderer per gli elementi HTML
           $('body').append(renderer.domElement);
 
           //Animazione della lampada
+          var lampMove = new TWEEN.Tween(lamp.position)
+            .to({x: 0, y:25, z: 0}, 2000)
+            .delay(0)
+            .start();
+
+          var cylMove = new TWEEN.Tween(cyl.position)
+            .to({x: 0, y:45, z: 3}, 2000)
+            .delay(0)
+            .start();
+
+          lamp.position.set(0,25,0);
+                    scene.add(lamp);
+
           var lampTweenBack = new TWEEN.Tween(lamp.position)
-            .to({x: -26 , y: 5, z: 2.7}, 2000)
+            .to({x: -26 , y: 5, z: 21.7}, 2000)
             .easing(TWEEN.Easing.Bounce.Out);
 
           var lampTween = new TWEEN.Tween(lamp.position)
             .to({x: -26, y: 5, z: 50}, 3000)
             .easing(TWEEN.Easing.Bounce.In)
-            .delay(0000)
+            .delay(2000)
             .chain(lampTweenBack)
             .start();
           
@@ -355,7 +356,7 @@ Homework 4
           var lampScale = new TWEEN.Tween(lamp.scale)
             .to({x: 1, y: 0.5-dz/h, z: 1}, 3000)
             .easing(TWEEN.Easing.Bounce.In)
-            .delay(000)
+            .delay(2000)
             .chain(lampScaleBack)
             .start();
 
@@ -366,15 +367,53 @@ Homework 4
           var lampTweenRotation = new TWEEN.Tween(lamp.rotation)
             .to({x: Math.PI, y: Math.PI/2, z:0}, 1000)
             .easing(TWEEN.Easing.Bounce.In)
-            .delay(1000)
+            .delay(3000)
+            .chain(lampTweenRotationBack)
+            .start();
+// Secondo salto
+
+          lamp.position.set(-26,5,21.7);
+                    scene.add(lamp);
+
+          var lampTweenBack = new TWEEN.Tween(lamp.position)
+            .to({x: -26 , y: 5, z: 2.7}, 2000)
+            .easing(TWEEN.Easing.Bounce.Out);
+
+          var lampTween = new TWEEN.Tween(lamp.position)
+            .to({x: -26, y: 5, z: 50}, 3000)
+            .easing(TWEEN.Easing.Bounce.In)
+            .delay(6000)
+            .chain(lampTweenBack)
+            .start();
+          
+          var lampScaleBack = new TWEEN.Tween(lamp.scale)
+            .to({x: 1, y: 1, z: 1}, 2000)
+            .easing(TWEEN.Easing.Bounce.Out);
+
+          var h = 8;
+          var dz = 3;
+          var lampScale = new TWEEN.Tween(lamp.scale)
+            .to({x: 1, y: 0.5-dz/h, z: 1}, 3000)
+            .easing(TWEEN.Easing.Bounce.In)
+            .delay(6000)
+            .chain(lampScaleBack)
+            .start();
+
+          var lampTweenRotationBack = new TWEEN.Tween(lamp.rotation)
+            .to({x: Math.PI/2, y: 0, z:0}, 2000)
+            .easing(TWEEN.Easing.Bounce.Out);
+
+          var lampTweenRotation = new TWEEN.Tween(lamp.rotation)
+            .to({x: Math.PI, y: Math.PI/2, z:0}, 1000)
+            .easing(TWEEN.Easing.Bounce.In)
+            .delay(6000)
             .chain(lampTweenRotationBack)
             .start();
 
           var letterScale = new TWEEN.Tween(text2.scale)
             .to({x: 1, y: 0.5-dz/h, z: 1}, 3000)
             .easing(TWEEN.Easing.Bounce.In)
-            .delay(1000)
-            .chain(lampTweenRotationBack)
+            .delay(6000)
             .start();
 
           //Chiamiamo le funzioni di render
