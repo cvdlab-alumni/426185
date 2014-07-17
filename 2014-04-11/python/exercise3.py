@@ -34,7 +34,7 @@ import boolean2
 from boolean2 import *
 
 import mapper
-from mapper import *from pyplasm import *
+from mapper import *
 
 import sys
 sys.path.insert(0, '/home/orange/Dropbox/GP/426185/2014-04-11/python/')

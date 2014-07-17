@@ -1,0 +1,113 @@
+# File produced by 
+
+newmtl BULB
+  Ns 74.66
+  d 1.0
+  illum 2
+  Kd 0.4 0.4 0.4
+  Ka 0.298 0.298 0.298
+  Ks 1.0 1.0 1.0
+
+newmtl CHORD
+  Ns 74.66
+  d 1.0
+  illum 2
+  Kd 0.4 0.4 0.4
+  Ka 0.298 0.298 0.298
+  Ks 1.0 1.0 1.0
+
+newmtl CONNECTOR
+  Ns 74.66
+  d 1.0
+  illum 2
+  Kd 0.4 0.4 0.4
+  Ka 0.298 0.298 0.298
+  Ks 1.0 1.0 1.0
+
+newmtl LARGE_HEA1
+  Ns 74.66
+  d 1.0
+  illum 2
+  Kd 0.4 0.4 0.4
+  Ka 0.298 0.298 0.298
+  Ks 1.0 1.0 1.0
+
+newmtl LARGE_HEAR
+  Ns 74.66
+  d 1.0
+  illum 2
+  Kd 0.4 0.4 0.4
+  Ka 0.298 0.298 0.298
+  Ks 1.0 1.0 1.0
+
+newmtl PLUG
+  Ns 74.66
+  d 1.0
+  illum 2
+  Kd 0.4 0.4 0.4
+  Ka 0.298 0.298 0.298
+  Ks 1.0 1.0 1.0
+
+newmtl POLE
+  Ns 74.66
+  d 1.0
+  illum 2
+  Kd 0.4 0.4 0.4
+  Ka 0.298 0.298 0.298
+  Ks 1.0 1.0 1.0
+
+newmtl PRONGS
+  Ns 74.66
+  d 1.0
+  illum 2
+  Kd 0.4 0.4 0.4
+  Ka 0.298 0.298 0.298
+  Ks 1.0 1.0 1.0
+
+newmtl SHADE
+  Ns 74.66
+  d 1.0
+  illum 2
+  Kd 0.4 0.4 0.4
+  Ka 0.298 0.298 0.298
+  Ks 1.0 1.0 1.0
+
+newmtl SHADE_RING
+  Ns 74.66
+  d 1.0
+  illum 2
+  Kd 0.4 0.4 0.4
+  Ka 0.298 0.298 0.298
+  Ks 1.0 1.0 1.0
+
+newmtl SOCKET
+  Ns 74.66
+  d 1.0
+  illum 2
+  Kd 0.4 0.4 0.4
+  Ka 0.298 0.298 0.298
+  Ks 1.0 1.0 1.0
+
+newmtl SOCKET_BAS
+  Ns 74.66
+  d 1.0
+  illum 2
+  Kd 0.4 0.4 0.4
+  Ka 0.298 0.298 0.298
+  Ks 1.0 1.0 1.0
+
+newmtl SWITCH
+  Ns 74.66
+  d 1.0
+  illum 2
+  Kd 0.4 0.4 0.4
+  Ka 0.298 0.298 0.298
+  Ks 1.0 1.0 1.0
+
+newmtl WHITE
+  Ns 74.66
+  d 1.0
+  illum 2
+  Kd 0.4 0.4 0.4
+  Ka 0.298 0.298 0.298
+  Ks 1.0 1.0 1.0

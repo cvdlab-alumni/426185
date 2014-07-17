@@ -1,0 +1,649 @@
+# File produced by 
+
+newmtl Box08
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.9804 0.9804 0.9804
+  Ka 0.9804 0.9804 0.9804
+  Ks 0 0 0
+
+newmtl Mass_Ele10
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl Mass_Elem0
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl Mass_Elem1
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl Mass_Elem2
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl Mass_Elem3
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl Mass_Elem4
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl Mass_Elem5
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl Mass_Elem6
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl Mass_Elem7
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl Mass_Elem8
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl Mass_Elem9
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl Mass_Eleme
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl Pillow
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0 0 0
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl Pillow01
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0 0 0
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl Pillow02
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.851 0.8431 0.8039
+  Ka 0.851 0.8431 0.8039
+  Ks 0 0 0
+
+newmtl Pillow03
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.851 0.8431 0.8039
+  Ka 0.851 0.8431 0.8039
+  Ks 0 0 0
+
+newmtl PolygonM10
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM11
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM12
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM13
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM14
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM15
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM16
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM17
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM18
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM19
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM20
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM21
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM22
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM23
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM24
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM25
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM26
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM27
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM28
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM29
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM30
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM31
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM32
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM33
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM34
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM35
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM36
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM37
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM38
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM39
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM40
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM41
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM42
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM43
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM44
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM45
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM46
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM47
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM48
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM49
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM50
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM51
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM52
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM53
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM54
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM55
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM56
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM57
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonM58
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonMe0
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonMe1
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonMe2
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonMe3
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonMe4
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonMe5
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonMe6
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonMe7
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonMe8
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonMe9
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl PolygonMes
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 0.0784 0.0784
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl Polyline
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl _dSolid
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl _dSolid0
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl _dSolid1
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.8078 0.7843 0.7176
+  Ka 0 0 0
+  Ks 0 0 0

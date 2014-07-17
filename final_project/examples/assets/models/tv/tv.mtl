@@ -1,0 +1,17 @@
+# File produced by 
+
+newmtl Default
+  Ns 26.4
+  d 1.0
+  illum 2
+  Kd 0.251 0.251 0.251
+  Ka 0.1176 0.1176 0.1176
+  Ks 0.7529 0.7529 0.7529
+
+newmtl Default_1
+  Ns 26.4
+  d 1.0
+  illum 2
+  Kd 0.7529 0.7529 0.7529
+  Ka 0.1176 0.1176 0.1176
+  Ks 0.7529 0.7529 0.7529

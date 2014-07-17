@@ -9,7 +9,7 @@ from exercise2 import*
 
 import sys
 """ import modules from lar-cc/lib """
-sys.path.insert(0, '/home/orange/lar-cc/lib/py/')
+sys.path.insert(0, 'C:/Users/Andrea/Dropbox/GP/lar-cc-master/lib/py')
 
 """ Mapping functions and primitive objects """
 from pyplasm import *

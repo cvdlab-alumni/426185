@@ -1,0 +1,49 @@
+# File produced by 
+
+newmtl pandant
+  Ns 40.37
+  d 0.52
+  illum 2
+  Kd 0.8588 0.8431 0.3843
+  Ka 0.8588 0.8431 0.3843
+  Ks 0.9176 0.9647 1.0
+
+newmtl pandant__1
+  Ns 40.37
+  d 0.52
+  illum 2
+  Kd 0.5451 0 1.0
+  Ka 0.5451 0 1.0
+  Ks 0.9176 0.9647 1.0
+
+newmtl pandant__2
+  Ns 89.9
+  d 1.0
+  illum 2
+  Kd 0.902 0.902 0.902
+  Ka 0.3294 0.3294 0.3294
+  Ks 1.0 1.0 1.0
+
+newmtl pandant__3
+  Ns 87.36
+  d 1.0
+  illum 2
+  Kd 0.4588 0.4588 0.4588
+  Ka 0.4588 0.4588 0.4588
+  Ks 1.0 1.0 1.0
+
+newmtl pandant__4
+  Ns 128.0
+  d 1.0
+  illum 2
+  Kd 0 0 0
+  Ka 0 0 0
+  Ks 1.0 1.0 1.0
+
+newmtl pandant__5
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 1.0 1.0 1.0

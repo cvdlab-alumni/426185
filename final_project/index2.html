@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<title>Progetto Finale </title> 
+<style>
+body{
+  margin: 0;
+overflow: hidden;
+}
+
+#stats {  /* Align stats top-left */
+  position: absolute;
+left: 0px;
+top: 0px;
+}
+
+#videoTV {
+  display: none; 
+position: absolute; 
+left 10px: 15px; 
+bottom: 10px;
+}
+
+#videoIPAD {
+  display: none; 
+position: absolute; 
+left 10px: 15px; 
+bottom: 10px;
+}
+
+#pointer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
+  width: 30px;
+  height: 30px;
+  display: none;
+  background-image: url("examples/assets/images/pointer.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+</style>
+</head>
+<body>
+
+<div id="pointer"></div>
+<!-- Video -->
+<video id="videoTV" src="examples/assets/movies/Big_Buck_Bunny_small.ogv" controls="true" autoplay="true"></video>
+<!-- Video -->
+<video id="videoIPAD" src="examples/assets/movies/prova.ogv" controls="true" autoplay="true"></video> 
+
+ 
+<!-- JavaScript libraries -->
+<script src="examples/assets/libs/jquery.min.js"></script> 
+<script src="examples/assets/libs/three.min.js"></script>
+<script src="examples/assets/libs/Stats.min.js"></script>
+<script src="examples/assets/libs/dat.gui.min.js"></script>
+<script src="examples/assets/libs/TrackballControls.js"></script>
+<script src="examples/assets/libs/OBJLoader.js"></script>
+<script src="examples/assets/libs/OBJMTLLoader.js"></script>
+<script src="examples/assets/libs/MTLLoader.js"></script>
+<script src="examples/assets/script/Function_Create_Wall.js"></script>
+<script src="examples/assets/libs/PointerLockControls.js"></script>
+<script src="examples/assets/script/Function_Create_Floor.js"></script>
+<script src="examples/assets/script/Function_Create_Video.js"></script>
+<script src="examples/assets/script/Function_Create_Window.js"></script>
+<script src="examples/assets/script/Function_Create_Obj.js"></script>
+<script src="examples/assets/script/Function_Create_Bump.js"></script>
+<script src="examples/assets/script/Function_Create_Car.js"></script>
+<script src="examples/assets/script/Function_Create_Stereo.js"></script>
+<script src="examples/assets/script/Function_Basic.js"></script>  
+<script src="examples/assets/script/Function_Create_Door.js"></script>
+<script src="examples/assets/libs/tween.min.js"></script>
+<script src="examples/assets/libs/keyframe.js"></script>
+<!-- Javascript code that runs our Three.js examples --> 
+<script>
+// once everything is loaded, we run our Three.js stuff.
+$(function () {
+  var stats = initStats();
+  // create a scene, that will hold all our elements such as objects, cameras and lights.
+  var scene = new THREE.Scene();
+  //LUCE
+  var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5);
+  directionalLight.position.set( 80, 80, 50);
+  scene.add( directionalLight );
+
+  var directionalLight2 = new THREE.DirectionalLight( 0xffffff, 0.5);
+  directionalLight2.position.set(0, 0, 50);
+  scene.add( directionalLight2 );
+
+  var directionalLight3 = new THREE.DirectionalLight( 0xffffff, 0.5);
+  directionalLight2.position.set(-50, -80, 50);
+  scene.add( directionalLight2 );
+
+  var directionalLight3 = new THREE.DirectionalLight( 0xffffff, 0.5);
+  directionalLight2.position.set(-50, -80, -50);
+  scene.add( directionalLight2 );
+
+  // create trackball controls
+  var trackballControls = new THREE.TrackballControls(camera);
+
+  // create a render and set the size
+  var webGLRenderer = new THREE.WebGLRenderer();
+  webGLRenderer.setClearColor(new THREE.Color(0xaaaaff, 1.0));
+  webGLRenderer.setSize(window.innerWidth, window.innerHeight);
+
+  var all = new THREE.Object3D();
+
+  //SUOLO
+  var planeGeometry = new THREE.BoxGeometry(50, 50, 1,20); //Crea la geometria, la dimensione del piano
+  var planeMaterial = new THREE.MeshLambertMaterial({map: THREE.ImageUtils.loadTexture('examples/assets/textures/general/prato.jpg'), side: THREE.DoubleSide});
+  var plane = new THREE.Mesh(planeGeometry,planeMaterial); //Crea l'oggetto
+  plane.receiveShadow = true;
+  plane.rotation.x = Math.PI/2;
+  plane.rotation.y = Math.PI;
+  plane.position.set(-19,-0.5,2);
+  all.add(plane); //Aggiungo il piano alla scena
+
+  //PAVIMENTO
+  var floor = createFloors();
+  floor.rotation.y = Math.PI;
+  floor.rotation.x = Math.PI/2;
+  all.add(floor);
+
+  //PARETI
+  var wall = createWalls();
+  wall.rotation.y = Math.PI;
+  wall.rotation.x = Math.PI/2;
+  all.add(wall);
+
+  //FINESTRE
+  var windows = createWindows();
+  windows.rotation.y = Math.PI;
+  windows.rotation.x = Math.PI/2;
+  all.add(windows);
+
+  //VIDEO
+  var video = createVideo();
+  all.add(video);
+
+  //PORTE
+  all.add(createDoors());
+
+//OGGETTI
+ all.add(createOBJ());
+
+//QUADRI
+  all.add(createPaint());
+  all.add(createCar());
+  all.add(createStereo());
+
+//Scrivania Completa
+
+  all.scale.set(6,6,6);
+  all.position.y = 24.3;
+   all.position.z = -13.5;
+   all.rotation.y = Math.PI;
+
+  scene.add(all);
+  // add the output of the renderer to the html element
+  $('body').append(webGLRenderer.domElement);
+  // call the render function
+  var step = 0;
+  var mesh;
+
+
+
+  //SKYBOX 
+  var urls = [
+'examples/assets/textures/general/cubo/pos-x.png',
+'examples/assets/textures/general/cubo/neg-x.png',
+'examples/assets/textures/general/cubo/pos-y.png',
+'examples/assets/textures/general/cubo/neg-y.png',
+'examples/assets/textures/general/cubo/pos-z.png',
+'examples/assets/textures/general/cubo/neg-z.png'
+];
+  cubemap = THREE.ImageUtils.loadTextureCube(urls);
+  // set the format, likely RGB unless you've gone crazy
+  cubemap.format = THREE.RGBFormat;
+  var materialArray = [];
+  for (var i = 0; i < 6; i++)
+    materialArray.push( new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture( urls[i]), side: THREE.BackSide }));
+  var skyMaterial = new THREE.MeshFaceMaterial( materialArray );
+  var wallpaperGeometry = new THREE.BoxGeometry(1000,1000,1000);
+  var wallpaper= new THREE.Mesh(wallpaperGeometry, skyMaterial);
+  wallpaper.scale.set(2,2,2);
+  wallpaper.position.y = 740;
+  wallpaper.position.x = -130;
+    wallpaper.position.z = 20;
+  scene.add(wallpaper);
+
+  document.addEventListener('mousedown', onDocumentMouseDown, false);
+
+  function onDocumentMouseDown(event) {
+    event.preventDefault();
+    if (document.pointerLockElement === element || document.mozPointerLockElement === element || document.webkitPointerLockElement === element) {
+      // var vector = new THREE.Vector3(0, 0, 2);
+      // projector.unprojectVector(vector, camera);
+      var raycaster = new THREE.Raycaster(controls.getObject().position, controls.getDirection(new THREE.Vector3(0, 0, 0)).clone());
+    } else {
+      var vector = new THREE.Vector3((event.clientX / window.innerWidth) * 2 - 1, -(event.clientY / window.innerHeight) * 2 + 1, 0.5);
+      projector.unprojectVector(vector, camera);
+      var raycaster = new THREE.Raycaster(camera.position,
+          vector.sub(camera.position).normalize());
+
+    }
+    // scene.add(new THREE.ArrowHelper(raycaster.ray.direction, raycaster.ray.origin, 10, 0x000000));
+    var intersects = raycaster.intersectObjects(toIntersect);
+    if (intersects.length > 0) {
+      intersects[0].object.interact && intersects[0].object.interact();
+    }
+  }
+  var FPenabled = false;
+  var controls;
+  var objects = [];
+  var ray;
+  var blocker = document.getElementById( 'blocker' );
+  //var instructions = document.getElementById( 'instructions' );
+
+  // http://www.html5rocks.com/en/tutorials/pointerlock/intro/
+  var rayMove = new THREE.Raycaster();
+  rayMove.ray.direction.set(0, 0, -1);
+  var havePointerLock = 'pointerLockElement' in document || 'mozPointerLockElement' in document || 'webkitPointerLockElement' in document;
+
+  if ( havePointerLock ) {
+    var element = document.body;
+    var pointerlockchange = function ( event ) {
+
+      if ( document.pointerLockElement === element || document.mozPointerLockElement === element || document.webkitPointerLockElement === element ) {
+        controls.enabled = true;
+        FPenabled = true;
+        $("#pointer").fadeIn(1000);
+        controls.isOnObject(false);
+
+        rayMove.ray.origin.y -= 4;
+        var intersections = rayMove.intersectObjects(objects);
+        if (intersections.length > 0) {
+          var distance = intersections[0].distance;
+          if (distance > 0 && distance < 4) {
+            controls.isOnObject(true);
+          }
+        }
+        controls.update();
+      } else {
+        controls.enabled = false;
+       location.reload();
+        //blocker.style.display = '-webkit-box';
+        //blocker.style.display = '-moz-box';
+        //blocker.style.display = 'box';
+        //instructions.style.display = '';
+      }
+    }
+
+    var pointerlockerror = function ( event ) {
+   location.reload();
+    }
+    // Hook pointer lock state change events
+    document.addEventListener( 'pointerlockchange', pointerlockchange, false );
+    document.addEventListener( 'mozpointerlockchange', pointerlockchange, false );
+    document.addEventListener( 'webkitpointerlockchange', pointerlockchange, false );
+
+    document.addEventListener( 'pointerlockerror', pointerlockerror, false );
+    document.addEventListener( 'mozpointerlockerror', pointerlockerror, false );
+    document.addEventListener( 'webkitpointerlockerror', pointerlockerror, false );
+    var switchFP = function (){
+      init();
+      trackballControls.reset();
+
+
+
+      //instructions.addEventListener( 'click', function ( event ) {
+      //instructions.style.display = 'none';
+
+      // Ask the browser to lock the pointer
+      element.requestPointerLock = element.requestPointerLock || element.mozRequestPointerLock || element.webkitRequestPointerLock;
+
+      if ( /Firefox/i.test( navigator.userAgent ) ) {
+        var fullscreenchange = function ( event ) {
+
+          if ( document.fullscreenElement === element || document.mozFullscreenElement === element || document.mozFullScreenElement === element ) {
+            document.removeEventListener( 'fullscreenchange', fullscreenchange );
+            document.removeEventListener( 'mozfullscreenchange', fullscreenchange );
+            element.requestPointerLock();
+          }
+        }
+        document.addEventListener( 'fullscreenchange', fullscreenchange, false );
+        document.addEventListener( 'mozfullscreenchange', fullscreenchange, false );
+
+        element.requestFullscreen = element.requestFullscreen || element.mozRequestFullscreen || element.mozRequestFullScreen || element.webkitRequestFullscreen;
+
+        element.requestFullscreen();
+
+      } else {
+        element.requestPointerLock();
+      }
+    }; 
+  }
+
+  var startTrackballControls = function() {
+   location.reload();
+
+  }
+
+  // setup the control gui
+  var controls = new function() {
+    this.switchFP = switchFP;
+    this.trackballControls = startTrackballControls;
+
+        this.bumpScaleCarav = 0.2;
+        this.bumpScaleClass = 0.2;
+        this.bumpScaleVan = 0.2;
+
+        this.updateBumpCarav = function (e) {
+          all.getObjectByName("quadro_salone", true).material.bumpScale = e;
+        }
+        this.updateBumpClass = function (e) {
+          all.getObjectByName("quadro_ingresso", true).material.bumpScale = e;
+        }
+        this.updateBumpVan = function (e) {
+          all.getObjectByName("quadro_corridoio", true).material.bumpScale = e;
+        }
+
+  };
+
+  var gui = new dat.GUI();
+  gui.add(controls, "switchFP");
+  gui.add(controls, "trackballControls");
+
+      bumpFolder = gui.addFolder("Bumps");
+      bumpFolder.add(controls, "bumpScaleCarav", -2, 2).onChange(controls.updateBumpCarav);
+      bumpFolder.add(controls, "bumpScaleClass", -2, 2).onChange(controls.updateBumpClass);
+      bumpFolder.add(controls, "bumpScaleVan", -2, 2).onChange(controls.updateBumpVan);
+
+
+
+  render();
+
+
+
+  function init() {
+    camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 1, 10000 );
+
+    controls = new THREE.PointerLockControls( camera );
+        scene.add( controls.getObject() );
+
+    ray = new THREE.Raycaster();
+    ray.ray.direction.set( 0, -1, 0 );
+
+    renderer = new THREE.WebGLRenderer();
+    renderer.setClearColor( 0xffffff );
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    document.body.appendChild( renderer.domElement );
+
+    //
+
+    window.addEventListener( 'resize', onWindowResize, false );
+  }
+
+  function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+  }
+
+
+
+  function FPControl () {
+    controls.isOnObject( false );
+    ray.ray.origin.copy( controls.getObject().position );
+    ray.ray.origin.y -= 10;
+    var intersections = ray.intersectObjects( objects );
+    if ( intersections.length > 0 ) {
+      var distance = intersections[ 0 ].distance;
+      if ( distance > 0 && distance < 10 ) {
+        controls.isOnObject( true );
+      }
+    }
+
+    controls.update();
+  }
+
+  function render() {
+    stats.update();
+    trackballControls.update();
+    TWEEN.update();
+
+    if (videoTV.readyState === videoTV.HAVE_ENOUGH_DATA) {
+      if (video.children[0].material.map)
+        video.children[0].material.map.needsUpdate = true;;
+    }
+
+    if (videoIPAD.readyState === videoIPAD.HAVE_ENOUGH_DATA) {
+      if (video.children[1].material.map)
+        video.children[1].material.map.needsUpdate = true;;
+    }
+
+
+
+    if (FPenabled === true) {
+      FPControl();
+    }
+
+    requestAnimationFrame(render);
+
+    webGLRenderer.render(scene, camera);
+  }
+
+  function initStats() {
+    var stats = new Stats();
+
+    stats.setMode(0); // 0: fps, 1: ms
+    $('body').append(stats.domElement);
+    return stats;
+  }
+});
+</script>  
+</body>
+</html>

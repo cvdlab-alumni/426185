@@ -1,0 +1,16 @@
+::Lights::
+
+thronworld creation _01 
+
+
+Description:
+
+This is a set of three lights made out of brass and wood mounted to another piece of wood.
+Made in Blender
+Texture from TurboSquid - ( i think )
+
+Feel free to do as you please with this model.
+
+
+Please send questions or comments to petergoldsmith@bluebottle.com
+

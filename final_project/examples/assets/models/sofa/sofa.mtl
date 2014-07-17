@@ -1,0 +1,153 @@
+# File produced by 
+
+newmtl Cilindro01
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 0.5882 0.8 0.898
+  Ka 0.5882 0.8 0.898
+  Ks 0.898 0.898 0.898
+
+newmtl Cilindro02
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 0.5882 0.8 0.898
+  Ka 0.5882 0.8 0.898
+  Ks 0.898 0.898 0.898
+
+newmtl Parallel10
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 0.5882 0.8 0.898
+  Ka 0.5882 0.8 0.898
+  Ks 0.898 0.898 0.898
+
+newmtl Parallel11
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 0.5882 0.8 0.898
+  Ka 0.5882 0.8 0.898
+  Ks 0.898 0.898 0.898
+
+newmtl Parallel12
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 0.5882 0.8 0.898
+  Ka 0.5882 0.8 0.898
+  Ks 0.898 0.898 0.898
+
+newmtl Parallel13
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 0.5882 0.8 0.898
+  Ka 0.5882 0.8 0.898
+  Ks 0.898 0.898 0.898
+
+newmtl Parallel14
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 0.5882 0.7922 0.8902
+  Ka 0.5882 0.7922 0.8902
+  Ks 0.898 0.898 0.898
+
+newmtl Parallel15
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 0.5882 0.7922 0.8902
+  Ka 0.5882 0.7922 0.8902
+  Ks 0.898 0.898 0.898
+
+newmtl Parallele0
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 0.5882 0.7922 0.8902
+  Ka 0.5882 0.7922 0.8902
+  Ks 0.898 0.898 0.898
+
+newmtl Parallele1
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 0.5882 0.7922 0.8902
+  Ka 0.5882 0.7922 0.8902
+  Ks 0.898 0.898 0.898
+
+newmtl Parallele2
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 0.5882 0.7922 0.8902
+  Ka 0.5882 0.7922 0.8902
+  Ks 0.898 0.898 0.898
+
+newmtl Parallele3
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 0.5882 0.7922 0.8902
+  Ka 0.5882 0.7922 0.8902
+  Ks 0.898 0.898 0.898
+
+newmtl Parallele4
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 0.5882 0.8 0.898
+  Ka 0.5882 0.8 0.898
+  Ks 0.898 0.898 0.898
+
+newmtl Parallele5
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 0.5882 0.8 0.898
+  Ka 0.5882 0.8 0.898
+  Ks 0.898 0.898 0.898
+
+newmtl Parallele6
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 0.5882 0.8 0.898
+  Ka 0.5882 0.8 0.898
+  Ks 0.898 0.898 0.898
+
+newmtl Parallele7
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 0.5882 0.8 0.898
+  Ka 0.5882 0.8 0.898
+  Ks 0.898 0.898 0.898
+
+newmtl Parallele8
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 0.5882 0.8 0.898
+  Ka 0.5882 0.8 0.898
+  Ks 0.898 0.898 0.898
+
+newmtl Parallele9
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 0.5882 0.8 0.898
+  Ka 0.5882 0.8 0.898
+  Ks 0.898 0.898 0.898
+
+newmtl Parallelep
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 0.5882 0.8 0.898
+  Ka 0.5882 0.8 0.898
+  Ks 0.898 0.898 0.898

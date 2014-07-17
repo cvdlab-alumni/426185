@@ -1,0 +1,17 @@
+# File produced by 
+
+newmtl main
+  Ns 34.02
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 1.0 1.0 1.0
+
+newmtl metal
+  Ns 34.02
+  d 1.0
+  illum 2
+  Kd 0.5412 0.5412 0.5412
+  Ka 0.5412 0.5412 0.5412
+  Ks 1.0 1.0 1.0
